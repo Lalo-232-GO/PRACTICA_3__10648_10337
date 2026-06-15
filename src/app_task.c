@@ -265,15 +265,15 @@ void app_tasks_create(void)
     
 	/* TODO --> Creación de tareas */
 	//xTaskCreate(task_manager,"Manager",);
-	xTaskCreate(task_manager, "Manager", 2048, NULL, tskIDLE_PRIORITY + 1, &h_manager);
-    xTaskCreate(button_task, "BTN_START/Stop", 2048, &btn_start, tskIDLE_PRIORITY + 1, &h_btn_start);
-    xTaskCreate(button_task, "BTN_DIR", 2048, &btn_dir, tskIDLE_PRIORITY + 1, &h_btn_dir);
-    xTaskCreate(button_task, "BTN_SPEED", 2048, &btn_speed, tskIDLE_PRIORITY + 1, &h_btn_speed);
-    xTaskCreate(counter_task, "Counter", 2048, NULL, tskIDLE_PRIORITY + 1, &h_counter);
-    xTaskCreate(led_task, "LED_1", 2048, &led_params[0], tskIDLE_PRIORITY + 1, &h_leds[0]);
-    xTaskCreate(led_task, "LED_2", 2048, &led_params[1], tskIDLE_PRIORITY +1, &h_leds[1]);
-    xTaskCreate(led_task, "LED_3", 2048, &led_params[2], tskIDLE_PRIORITY + 1, &h_leds[2]);
-    xTaskCreate(led_task, "LED_4", 2048, &led_params[3], tskIDLE_PRIORITY + 1, &h_leds[3]);
+	xTaskCreate(task_manager, "Manager", 2048, NULL, 1, &h_manager);
+    xTaskCreate(button_task, "BTN_START/Stop", 2048, &btn_start, 1, &h_btn_start);
+    xTaskCreate(button_task, "BTN_DIR", 2048, &btn_dir, 1, &h_btn_dir);
+    xTaskCreate(button_task, "BTN_SPEED", 2048, &btn_speed, 1, &h_btn_speed);
+    xTaskCreate(counter_task, "Counter", 2048, NULL, 1, &h_counter);
+    xTaskCreate(led_task, "LED_1", 2048, &led_params[0], 1, &h_leds[0]);
+    xTaskCreate(led_task, "LED_2", 2048, &led_params[1], 1, &h_leds[1]);
+    xTaskCreate(led_task, "LED_3", 2048, &led_params[2], 1, &h_leds[2]);
+    xTaskCreate(led_task, "LED_4", 2048, &led_params[3], 1, &h_leds[3]);
     /*
        Estado inicial:
        - contador pausado
