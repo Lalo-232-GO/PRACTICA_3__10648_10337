@@ -13,12 +13,22 @@ static void counters_step(void) // Aquí debe de ser counters_step y no counter_
 	/*TODO --> Si g_system.direction = COUNT_UP entonces g_system.value incrementa su valor*/
     if(g_system.direction == COUNT_UP)
 	{
-		g_system.value++;
+		//g_system.value++;
+        if (g_system.value >= 9) {
+            g_system.value = 0;
+        } else {
+            g_system.value++;
+        }
     }
     else
     {
 	/*TODO --> Si g_system.direction = COUNT_DOWN entonces g_system.value decrementa su valor*/
-	g_system.value--;
+	    //g_system.value--;
+        if (g_system.value == 0) {
+            g_system.value = 9;
+        } else {
+            g_system.value--;
+        }
     }
 }
 
